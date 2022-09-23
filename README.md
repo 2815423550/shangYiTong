@@ -1,6 +1,6 @@
 阶段二
 
-实现了查询表中所有记录的功能
+实现了查询表中所有记录的功能,可以访问http://localhost:8201/admin/hosp/hospitalSet/findAll得到表中所有记录
 
 
 
