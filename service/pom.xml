@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>service-hosp</module>
         <module>service_user</module>
         <module>service_hosp</module>
     </modules>
@@ -19,14 +18,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.atguigu.yygh</groupId>
+            <groupId>com.atguigu</groupId>
             <artifactId>service-util</artifactId>
-            <version>1.0</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.atguigu.yygh</groupId>
+            <groupId>com.atguigu</groupId>
             <artifactId>model</artifactId>
-            <version>1.0</version>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!--web-->
         <dependency>
