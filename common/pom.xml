@@ -12,9 +12,9 @@
     <artifactId>common</artifactId>
 <packaging>pom</packaging>
     <modules>
-        <module>common-util</module>
-        <module>service-util</module>
-        <module>rabbit-util</module>
+        <module>common_util</module>
+        <module>service_util</module>
+        <module>rabbit_util</module>
     </modules>
 
     <dependencies>
