@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>common</module>
+        <module>model</module>
+        <module>service</module>
+        <module>service_user</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!--        设置springboot版本      -->
+        <version>2.2.1.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+<!--    最顶级父工程的pom文件里的<groupId>可以随便起，但是你这里写什么，
+你的子模块的pom文件（也就是项目里的所有pom）的<groupId>都要写成你在这里写的这个-->
+    <groupId>com.atguigu</groupId>
+<!--    最高级的<artifactId>便是你项目的项目名（也就是最大的那个文件夹的名字），要和你项目的项目名一致，
+不能写成中文；其他pom里的<artifactId>的值都是他们的上一级<artifactId>的值（就上一级，只跟随上一级）-->
+    <artifactId>yygh_parent</artifactId>
+<!--  packaging（打包模式）为pom时，说明他作为父工程；
+父级项目的packaging都为pom，packaging默认类型jar类型，如果不做配置，maven会将该项目打成jar包  -->
+    <packaging>pom</packaging>
+<!--    什么意思？？？？？？？？？？？？？？？？？？？？？？？？？-->
+    <version>0.0.1-SNAPSHOT</version>
+<!--    也就是你的项目名-->
+    <name>yygh_parent</name>
+<!--    随便写-->
+    <description>Demo project for Spring Boot</description>
+
+    <!-- 依赖的版本，也可以分开写  -->
+    <properties>
+        <java.version>1.8</java.version>
+        <cloud.version>Hoxton.RELEASE</cloud.version>
+        <alibaba.version>2.2.0.RELEASE</alibaba.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <mysql.version>8.0.24</mysql.version>
+        <swagger.version>2.7.0</swagger.version>
+        <jwt.version>0.7.0</jwt.version>
+        <fastjson.version>1.2.29</fastjson.version>
+        <httpclient.version>4.5.1</httpclient.version>
+        <easyexcel.version>2.2.0-beta2</easyexcel.version>
+        <aliyun.version>4.1.1</aliyun.version>
+        <oss.version>3.9.1</oss.version>
+        <jodatime.version>2.10.1</jodatime.version>
+    </properties>
+
+    <!--  依赖中<dependencyManagement>的作用：
+    父工程中如果只有<dependencies>标签，那么dependencies声明的依赖项，默认被子工程全部继承；
+    父工程中如果有<dependencyManagement>标签，那么dependencyManagement声明的依赖项，不会被子工程默认继承，
+    需要显式声明才可继承，子工程也可指定自己需要的版本；-->
+    <dependencyManagement>
+        <dependencies>
+            <!--            这是springcloud模板引擎依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--            这里设置阿里云镜像依赖？我也不懂-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--mybatis-plus 连接数据库，使得开发效率更快-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--            mysql驱动，也没什么好说的-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--swagger，这个我目前不懂-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--swagger ui，这个我也不懂-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--            不懂-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <!--            不懂-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!--            还是不懂-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--            不懂+1-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <!--            不懂+2-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.version}</version>
+            </dependency>
+            <!--            什么鬼？？？？-->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+            <!--日期时间工具-->
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${jodatime.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 这里设置项目打包时会将java目录中的*.xml文件也进行打包（我也不懂打包） -->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
