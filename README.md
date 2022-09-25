@@ -109,7 +109,11 @@ docker exec -it mymongo /bin/bash
 如果出现以下情况则说明成功
 
 ![image-20220925094400972](C:\Users\28154\AppData\Roaming\Typora\typora-user-images\image-20220925094400972.png)
+卧槽，我现在才发现图片显示不出来。。。。。。应该先把图片放到图床上然后再复制连接的（哭死）
 
+第五步使用MongoDB客户端进行操作 ：
+执行mongo命令进入mongo控制台，但是我试了好多次都是失败，说mogon命令找不到，去群里问了别人说执行mongosh命令，执行后可以了，
+然后再执行 show dbs查询所有数据库
 
 
 然后。。。。。。。。。
