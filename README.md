@@ -76,7 +76,7 @@ docker images
 
 如果出现以下，则说明mongodb镜像拉取成功
 
-![image-20220925093649514](C:\Users\28154\AppData\Roaming\Typora\typora-user-images\image-20220925093649514.png)
+![image-20220925093649514.png](https://s2.loli.net/2022/09/25/xkYjhlLO9tDCB4c.png)
 
 
 
@@ -95,7 +95,7 @@ docker ps
 
 如果出现以下情况则说明成功创建和启动mongodb容器 
 
-![image-20220925094057793](C:\Users\28154\AppData\Roaming\Typora\typora-user-images\image-20220925094057793.png)
+![image-20220925094057793.png](https://s2.loli.net/2022/09/25/FpRC5E87KfXO4ul.png)
 
 
 
@@ -108,7 +108,7 @@ docker exec -it mymongo /bin/bash
 
 如果出现以下情况则说明成功
 
-![image-20220925094400972](C:\Users\28154\AppData\Roaming\Typora\typora-user-images\image-20220925094400972.png)
+![image-20220925094400972.png](https://s2.loli.net/2022/09/25/v6Bf7OtQoVXxzUW.png)
 卧槽，我现在才发现图片显示不出来。。。。。。应该先把图片放到图床上然后再复制连接的（哭死）
 
 第五步使用MongoDB客户端进行操作 ：
