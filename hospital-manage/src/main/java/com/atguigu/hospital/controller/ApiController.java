@@ -40,13 +40,14 @@ public class ApiController extends BaseController {
 		return "hospitalSet/index";
 	}
 
+	//上传医院接口
 	@RequestMapping(value="/hospitalSet/save")
 	public String createHospitalSet(ModelMap model, HospitalSet hospitalSet) {
 		hospitalSetMapper.updateById(hospitalSet);
 		return "redirect:/hospitalSet/index";
 	}
 
-	@RequestMapping("/com/atguigu/hospital/index")
+	@RequestMapping("/hospital/index")
 	public String getHospital(ModelMap model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
 		try {
 			HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
@@ -61,15 +62,15 @@ public class ApiController extends BaseController {
 		} catch (Exception e) {
 			this.failureMessage("数据异常", request);
 		}
-		return "com/atguigu/hospital/index";
+		return "/hospital/index";
 	}
 
-	@RequestMapping(value= "/com/atguigu/hospital/create")
+	@RequestMapping(value= "/hospital/create")
 	public String createHospital(ModelMap model) {
-		return "com/atguigu/hospital/create";
+		return "/hospital/create";
 	}
 
-	@RequestMapping(value= "/com/atguigu/hospital/save",method=RequestMethod.POST)
+	@RequestMapping(value= "/hospital/save",method=RequestMethod.POST)
 	public String saveHospital(String data, HttpServletRequest request) {
 		try {
 			apiService.saveHospital(data);
@@ -159,12 +160,12 @@ public class ApiController extends BaseController {
 		return this.successPage(null,request);
 	}
 
-	@RequestMapping(value= "/com/atguigu/hospital/createBatch")
+	@RequestMapping(value= "/hospital/createBatch")
 	public String createHospitalBatch(ModelMap model) {
-		return "com/atguigu/hospital/createBatch";
+		return "/hospital/createBatch";
 	}
 
-	@RequestMapping(value= "/com/atguigu/hospital/saveBatch",method=RequestMethod.POST)
+	@RequestMapping(value= "/hospital/saveBatch",method=RequestMethod.POST)
 	public String saveBatchHospital(HttpServletRequest request) {
 		try {
 			apiService.saveBatchHospital();
